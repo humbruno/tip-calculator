@@ -2,4 +2,52 @@
 @forward "buttons";
 
 body {
+  background-color: var(--lightGrayishCyan);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.container {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: rem(30);
+  border-top-left-radius: rem(20);
+  border-top-right-radius: rem(20);
+
+  h2 {
+    font-size: rem(12);
+
+    span {
+      color: var(--darkGrayishCyan);
+    }
+  }
+}
+
+input {
+  font-family: var(--fontPrimary);
+  text-align: right;
+  background-color: var(--veryLightGrayishCyan);
+  border: none;
+  border-radius: 5px;
+}
+
+.input {
+  color: var(--darkGrayishCyan);
+  flex: 1;
+}
+
+.output {
+  background-color: var(--veryDarkCyan);
+  color: var(--white);
+  flex: 1;
+  border-radius: 10px;
+  padding: rem(15);
+}
+
+nav {
+  margin-bottom: rem(30);
 }
