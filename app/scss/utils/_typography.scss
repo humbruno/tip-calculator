@@ -1,0 +1,24 @@
+:root {
+  --fontPrimary: "Space Mono", monospace; // weight 700
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: rem(24);
+  font-family: var(--fontPrimary);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
