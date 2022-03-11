@@ -45,7 +45,7 @@ input {
   font-family: var(--fontPrimary);
   text-align: right;
   background-color: var(--veryLightGrayishCyan);
-  border: none;
+  border: 2px solid transparent;
   padding: 8px;
   border-radius: 5px;
   font-size: rem(24);
