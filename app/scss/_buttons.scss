@@ -8,11 +8,14 @@ ul {
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
 
-  li {
+  @include breakpoint(large) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .input__btn-wrapper {
+  margin-bottom: rem(20);
+
   .btn {
     border: none;
     font-family: var(--fontPrimary);
@@ -21,6 +24,42 @@ ul {
     border-radius: 5px;
     font-size: rem(24);
     background-color: var(--veryDarkCyan);
-    color: var(--white);
+    color: var(--veryLightGrayishCyan);
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--lightGrayishCyan);
+      color: var(--veryDarkCyan);
+    }
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .selected {
+    background-color: var(--strongCyan);
+    color: var(--veryDarkCyan);
+  }
+}
+
+.reset-wrapper {
+  .btn {
+    border: none;
+    font-family: var(--fontPrimary);
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: rem(24);
+    background-color: var(--strongCyan);
+    color: var(--veryDarkCyan);
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--lightGrayishCyan);
+      color: var(--veryDarkCyan);
+    }
   }
 }
