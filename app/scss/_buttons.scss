@@ -27,10 +27,12 @@ ul {
     color: var(--veryLightGrayishCyan);
     transition: all 150ms ease-in-out;
 
-    &:hover {
-      cursor: pointer;
-      background-color: var(--lightGrayishCyan);
-      color: var(--veryDarkCyan);
+    @include breakpoint(large) {
+      &:hover {
+        cursor: pointer;
+        background-color: var(--lightGrayishCyan);
+        color: var(--veryDarkCyan);
+      }
     }
   }
 
