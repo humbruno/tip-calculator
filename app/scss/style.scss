@@ -139,3 +139,15 @@ nav {
     margin-top: 0;
   }
 }
+
+//remove number input stepper, while keeping it number-only
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
