@@ -32,12 +32,27 @@ input {
   text-align: right;
   background-color: var(--veryLightGrayishCyan);
   border: none;
+  padding: 8px;
   border-radius: 5px;
+  font-size: rem(24);
+  color: var(--veryDarkCyan);
 }
 
 .input {
   color: var(--darkGrayishCyan);
   flex: 1;
+
+  &__bill-wrapper {
+    input {
+      width: 100%;
+    }
+  }
+
+  &__people-wrapper {
+    input {
+      width: 100%;
+    }
+  }
 }
 
 .output {
