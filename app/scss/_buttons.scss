@@ -58,10 +58,19 @@ ul {
     color: var(--veryDarkCyan);
     transition: all 150ms ease-in-out;
 
-    &:hover {
-      cursor: pointer;
-      background-color: var(--lightGrayishCyan);
-      color: var(--veryDarkCyan);
+    @include breakpoint(large) {
+      &:hover {
+        cursor: pointer;
+        background-color: var(--lightGrayishCyan);
+        color: var(--veryDarkCyan);
+      }
+    }
+
+    @include breakpoint-down(medium) {
+      &:active {
+        background-color: var(--lightGrayishCyan);
+        color: var(--veryDarkCyan);
+      }
     }
   }
 }

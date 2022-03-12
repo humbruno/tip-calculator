@@ -11,7 +11,7 @@ let selectedTip = 0;
 let initialBill = 0;
 let numPeople = 2;
 
-const totalAmount = () => {
+function totalAmount() {
   let calc = (initialBill * (selectedTip + 1)) / numPeople;
 
   if (calc > 0 && !(calc === Infinity)) {
@@ -19,9 +19,9 @@ const totalAmount = () => {
   } else {
     return "$0.00";
   }
-};
+}
 
-const totalTip = () => {
+function totalTip() {
   let calc = (initialBill * selectedTip) / numPeople;
 
   if (calc > 0 && !(calc === Infinity)) {
@@ -29,7 +29,24 @@ const totalTip = () => {
   } else {
     return "$0.00";
   }
-};
+}
+
+function reset() {
+  selectedTip = 0;
+  initialBill = 0;
+  numPeople = 2;
+  people.value = "";
+  bill.value = "";
+  customTip.value = "";
+  people.classList.remove("empty");
+  peopleValidation.innerHTML = "";
+  totalPerPerson.innerHTML = totalAmount();
+  tipPerPerson.innerHTML = totalTip();
+
+  for (let i = 0; i < tipButtons.length; i++) {
+    tipButtons[i].classList.remove("selected");
+  }
+}
 
 for (const button of tipButtons) {
   button.addEventListener("click", () => {
@@ -61,12 +78,11 @@ bill.addEventListener("input", () => {
 });
 
 people.addEventListener("input", () => {
-  numPeople = people.value;
-
-  if (numPeople <= 0) {
+  if (people.value <= 0) {
     peopleValidation.innerHTML = "Can't be zero";
     people.classList.add("empty");
   } else {
+    numPeople = people.value;
     peopleValidation.innerHTML = "";
     people.classList.remove("empty");
   }
@@ -75,17 +91,4 @@ people.addEventListener("input", () => {
   tipPerPerson.innerHTML = totalTip();
 });
 
-resetButton.addEventListener("click", () => {
-  selectedTip = 0;
-  initialBill = 0;
-  numPeople = 2;
-  people.value = 0;
-  bill.value = 0;
-  customTip.value = "Custom";
-  totalPerPerson.innerHTML = totalAmount();
-  tipPerPerson.innerHTML = totalTip();
-
-  for (let i = 0; i < tipButtons.length; i++) {
-    tipButtons[i].classList.remove("selected");
-  }
-});
+resetButton.addEventListener("click", reset);
